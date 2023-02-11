@@ -1,5 +1,16 @@
-import { Center, Slider, SliderFilledTrack, SliderThumb, SliderTrack, Text, VStack, Heading } from "@chakra-ui/react";
+import {
+  Center,
+  Slider,
+  SliderFilledTrack,
+  SliderThumb,
+  SliderTrack,
+  Text,
+  VStack,
+  Heading,
+  Button
+} from "@chakra-ui/react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Nslider () {
   return(
@@ -10,6 +21,22 @@ function Nslider () {
       <SliderThumb />
     </Slider>
   )
+}
+
+function MyButton() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/question3");
+  };
+  return (
+    <Center mt="0px">
+      <VStack spacing={4} direction='row' align='center'>
+        <Button colorScheme='messenger' size='lg' onClick={handleClick}>
+          NEXT
+        </Button>
+      </VStack>
+    </Center>
+  );
 }
 
 const Question2 = (): JSX.Element => (
@@ -40,6 +67,7 @@ const Question2 = (): JSX.Element => (
       <VStack spacing="32px">
         <Text fontSize='4xl'>ALCOHOL</Text>
         <Nslider/>
+        <MyButton/>
       </VStack>
       <Text fontSize='2xl'>139</Text>
     </Center>
