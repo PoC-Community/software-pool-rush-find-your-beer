@@ -8,8 +8,9 @@ import prisma from './prisma';
 const server = express();
 const port = 8080;
 
-server.get('/Beer', (req, res) => {
-    res.send(prisma.beer); 
+server.get('/Beer', async (req, res) => {
+    const beer = await prisma.beer.findMany();
+      res.send(beer);
 });
 
 server.listen(port, () => {
