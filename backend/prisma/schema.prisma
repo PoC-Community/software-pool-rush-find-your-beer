@@ -1,0 +1,19 @@
+model beer {
+  uuid        String @id @unique
+  name        String
+  style       String
+  ABV         Int
+  minIBU      Int
+  maxIBU      Int
+  astringency Int
+  body        Int
+  alcohol     Int
+  bitter      Int
+  sweet       Int
+  sour        Int
+  salty       Int
+  fruit       Int
+  hoppy       Int
+  spices      Int
+  malty       Int
+}
