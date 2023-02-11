@@ -1,0 +1,19 @@
+version: '3'
+services:
+  db:
+    container_name: my_database
+    image: postgres:13.3
+    restart: always
+    environment:
+      POSTGRES_USER: matteo
+      POSTGRES_PASSWORD: matteo
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: my_database
+    ports:
+      - 5432:5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
