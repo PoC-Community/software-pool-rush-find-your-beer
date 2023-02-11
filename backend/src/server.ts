@@ -9,7 +9,7 @@ const server = express();
 const port = 8080;
 
 server.get('/Beer', (req, res) => {
-    res.send(prisma.beer); 
+    res.send(prisma.beer);
 });
 
 server.listen(port, () => {
