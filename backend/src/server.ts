@@ -1,6 +1,6 @@
 import express from 'express';
-import * as Express from 'express';
-import morgan from 'morgan';
+import {Express} from "express";
+import morgan from "morgan";
 import serveFavicon from 'serve-favicon';
 
 const server = express();
