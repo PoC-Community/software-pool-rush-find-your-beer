@@ -45,6 +45,7 @@ function Nslider () {
       onMouseEnter={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
     >
+      <Slider aria-label='slider-ex-5' onChangeEnd={(val) => console.log(val)}>
       <SliderTrack>
         <SliderFilledTrack />
       </SliderTrack>
@@ -58,6 +59,7 @@ function Nslider () {
       >
         <SliderThumb />
       </Tooltip>
+    </Slider>
     </Slider>
   )
 }
@@ -81,26 +83,26 @@ function MyButton() {
 const Question1 = (): JSX.Element => (
   <div>
     <Center mt="64px">
-      <Heading size='4xl' fontSize='100px' color='white'>
+      <Heading size='4xl' fontSize='100px'>
         Stats
       </Heading>
     </Center>
     <Center mt="64px">
-      <Text fontSize='2xl' color='white'>0</Text>
+      <Text fontSize='2xl'>0</Text>
       <VStack spacing="32px">
-        <Text fontSize='4xl' color='white'>IBU</Text>
+        <Text fontSize='4xl'>IBU</Text>
         <Rslider/>
       </VStack>
-      <Text fontSize='2xl' color='white'>100</Text>
+      <Text fontSize='2xl'>100</Text>
     </Center>
     <Center mt="64px">
-      <Text fontSize='2xl' color='white'>0</Text>
+      <Text fontSize='2xl'>0</Text>
       <VStack spacing="32px">
-        <Text fontSize='4xl' color='white'>ABV</Text>
+        <Text fontSize='4xl'>ABV</Text>
         <Nslider/>
         <MyButton/>
       </VStack>
-      <Text fontSize='2xl' color='white'>57.5</Text>
+      <Text fontSize='2xl'>57.5</Text>
     </Center>
   </div>
 );

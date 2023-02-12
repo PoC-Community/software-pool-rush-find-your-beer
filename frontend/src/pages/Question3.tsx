@@ -134,37 +134,37 @@ function MyButton() {
 const Question3 = (): JSX.Element => (
   <div>
     <Center mt="64px">
-      <Heading size='4xl' fontSize='100px' color='white'>
+      <Heading size='4xl' fontSize='100px'>
         Taste
       </Heading>
     </Center>
     <Center mt="64px">
-      <Text fontSize='2xl' color='white'>0</Text>
+      <Text fontSize='2xl'>0</Text>
       <VStack spacing="32px">
-        <Text fontSize='4xl' color='white'>Bitter</Text>
+        <Text fontSize='4xl'>Bitter</Text>
         <Nslider1/>
       </VStack>
-      <Text fontSize='2xl' color='white'>150</Text>
+      <Text fontSize='2xl'>150</Text>
     </Center>
     <Center mt="64px">
-      <Text fontSize='2xl' color='white'>0</Text>
+      <Text fontSize='2xl'>0</Text>
       <VStack spacing="32px">
-        <Text fontSize='4xl' color='white'>Sweet</Text>
+        <Text fontSize='4xl'>Sweet</Text>
         <Nslider2/>
       </VStack>
-      <Text fontSize='2xl' color='white'>263</Text>
+      <Text fontSize='2xl'>263</Text>
     </Center>
     <Center mt="64px">
-      <Text fontSize='2xl' color='white'>0</Text>
+      <Text fontSize='2xl'>0</Text>
       <VStack spacing="32px">
-        <Text fontSize='4xl' color='white'>Sour</Text>
+        <Text fontSize='4xl'>Sour</Text>
         <Nslider3/>
       </VStack>
-      <Text fontSize='2xl' color='white'>284</Text>
+      <Text fontSize='2xl'>284</Text>
     </Center>
     <Center mt="64px">
       <VStack spacing="32px">
-        <Text fontSize='4xl' color='white'>Salty</Text>
+        <Text fontSize='4xl'>Salty</Text>
         <Switch_Button/>
         <MyButton/>
       </VStack>
