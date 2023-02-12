@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import { useNavigate } from "react-router-dom";
 
 function MyImage() {
-    return <img src="/logobiere.png" alt="Logo" width="20%" height="100px" />;
+    return <img src="/logobiere.png" alt="Logo" width="50%" height="100px" />;
 }
 
 function MyButton() {
@@ -22,12 +22,12 @@ function MyButton() {
     );
 }
 const Home = (): JSX.Element => (
-<div style={{ backgroundColor: "#0163C7", height: "20vh" }}>
-    <MyImage />
-    <Center mt="160px">
+<div>
+    <Center mt="64px">
      <VStack spacing="32px">
-          <Text fontSize='4xl'>You are looking for the perfect beer for you ?</Text>
-          <Text fontSize='4xl'>You are on the right site !</Text>
+          <MyImage />
+          <Text fontSize='4xl'>Are you looking for the perfect beer for you ?</Text>
+          <Text fontSize='4xl'>You are on the right place !</Text>
           <MyButton />
      </VStack>
     </Center>

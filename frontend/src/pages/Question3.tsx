@@ -6,7 +6,7 @@ import {
   SliderTrack,
   SliderFilledTrack,
   SliderThumb,
-  Button, Heading, Switch, FormLabel, FormControl
+  Button, Heading, Switch, FormLabel, FormControl, Tooltip
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import React from "react";
@@ -22,13 +22,95 @@ function Switch_Button () {
   )
 }
 
-function Nslider () {
-  return(
-    <Slider aria-label='slider-ex-1' defaultValue={30}>
+function Nslider3 () {
+  const [sliderValue, setSliderValue] = React.useState(5)
+  const [showTooltip, setShowTooltip] = React.useState(false)
+  return (
+    <Slider
+      w="600px"
+      id='slider'
+      defaultValue={5}
+      min={0}
+      max={284}
+      onChange={(v) => setSliderValue(v)}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+    >
       <SliderTrack>
         <SliderFilledTrack />
       </SliderTrack>
-      <SliderThumb />
+      <Tooltip
+        hasArrow
+        bg='teal.500'
+        color='white'
+        placement='top'
+        isOpen={showTooltip}
+        label={`${sliderValue}`}
+      >
+        <SliderThumb />
+      </Tooltip>
+    </Slider>
+  )
+}
+
+function Nslider2 () {
+  const [sliderValue, setSliderValue] = React.useState(5)
+  const [showTooltip, setShowTooltip] = React.useState(false)
+  return (
+    <Slider
+      w="600px"
+      id='slider'
+      defaultValue={5}
+      min={0}
+      max={263}
+      onChange={(v) => setSliderValue(v)}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+    >
+      <SliderTrack>
+        <SliderFilledTrack />
+      </SliderTrack>
+      <Tooltip
+        hasArrow
+        bg='teal.500'
+        color='white'
+        placement='top'
+        isOpen={showTooltip}
+        label={`${sliderValue}`}
+      >
+        <SliderThumb />
+      </Tooltip>
+    </Slider>
+  )
+}
+
+function Nslider1 () {
+  const [sliderValue, setSliderValue] = React.useState(5)
+  const [showTooltip, setShowTooltip] = React.useState(false)
+  return (
+    <Slider
+      w="600px"
+      id='slider'
+      defaultValue={5}
+      min={0}
+      max={150}
+      onChange={(v) => setSliderValue(v)}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+    >
+      <SliderTrack>
+        <SliderFilledTrack />
+      </SliderTrack>
+      <Tooltip
+        hasArrow
+        bg='teal.500'
+        color='white'
+        placement='top'
+        isOpen={showTooltip}
+        label={`${sliderValue}`}
+      >
+        <SliderThumb />
+      </Tooltip>
     </Slider>
   )
 }
@@ -60,7 +142,7 @@ const Question3 = (): JSX.Element => (
       <Text fontSize='2xl'>0</Text>
       <VStack spacing="32px">
         <Text fontSize='4xl'>Bitter</Text>
-        <Nslider/>
+        <Nslider1/>
       </VStack>
       <Text fontSize='2xl'>150</Text>
     </Center>
@@ -68,7 +150,7 @@ const Question3 = (): JSX.Element => (
       <Text fontSize='2xl'>0</Text>
       <VStack spacing="32px">
         <Text fontSize='4xl'>Sweet</Text>
-        <Nslider/>
+        <Nslider2/>
       </VStack>
       <Text fontSize='2xl'>263</Text>
     </Center>
@@ -76,7 +158,7 @@ const Question3 = (): JSX.Element => (
       <Text fontSize='2xl'>0</Text>
       <VStack spacing="32px">
         <Text fontSize='4xl'>Sour</Text>
-        <Nslider/>
+        <Nslider3/>
       </VStack>
       <Text fontSize='2xl'>284</Text>
     </Center>

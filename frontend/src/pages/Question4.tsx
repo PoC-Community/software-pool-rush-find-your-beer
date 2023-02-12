@@ -6,18 +6,131 @@ import {
   SliderTrack,
   SliderFilledTrack,
   SliderThumb,
-  Button, Heading
+  Button, Heading, Tooltip
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 
-function Nslider () {
-  return(
-    <Slider aria-label='slider-ex-1' defaultValue={30}>
+function Nslider4 () {
+  const [sliderValue, setSliderValue] = React.useState(5)
+  const [showTooltip, setShowTooltip] = React.useState(false)
+  return (
+    <Slider
+      w="600px"
+      id='slider'
+      defaultValue={5}
+      min={0}
+      max={239}
+      onChange={(v) => setSliderValue(v)}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+    >
       <SliderTrack>
         <SliderFilledTrack />
       </SliderTrack>
-      <SliderThumb />
+      <Tooltip
+        hasArrow
+        bg='teal.500'
+        color='white'
+        placement='top'
+        isOpen={showTooltip}
+        label={`${sliderValue}`}
+      >
+        <SliderThumb />
+      </Tooltip>
+    </Slider>
+  )
+}
+
+function Nslider3 () {
+  const [sliderValue, setSliderValue] = React.useState(5)
+  const [showTooltip, setShowTooltip] = React.useState(false)
+  return (
+    <Slider
+      w="600px"
+      id='slider'
+      defaultValue={5}
+      min={0}
+      max={184}
+      onChange={(v) => setSliderValue(v)}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+    >
+      <SliderTrack>
+        <SliderFilledTrack />
+      </SliderTrack>
+      <Tooltip
+        hasArrow
+        bg='teal.500'
+        color='white'
+        placement='top'
+        isOpen={showTooltip}
+        label={`${sliderValue}`}
+      >
+        <SliderThumb />
+      </Tooltip>
+    </Slider>
+  )
+}
+
+function Nslider2 () {
+  const [sliderValue, setSliderValue] = React.useState(5)
+  const [showTooltip, setShowTooltip] = React.useState(false)
+  return (
+    <Slider
+      w="600px"
+      id='slider'
+      defaultValue={5}
+      min={0}
+      max={172}
+      onChange={(v) => setSliderValue(v)}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+    >
+      <SliderTrack>
+        <SliderFilledTrack />
+      </SliderTrack>
+      <Tooltip
+        hasArrow
+        bg='teal.500'
+        color='white'
+        placement='top'
+        isOpen={showTooltip}
+        label={`${sliderValue}`}
+      >
+        <SliderThumb />
+      </Tooltip>
+    </Slider>
+  )
+}
+
+function Nslider1 () {
+  const [sliderValue, setSliderValue] = React.useState(5)
+  const [showTooltip, setShowTooltip] = React.useState(false)
+  return (
+    <Slider
+      w="600px"
+      id='slider'
+      defaultValue={5}
+      min={0}
+      max={175}
+      onChange={(v) => setSliderValue(v)}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+    >
+      <SliderTrack>
+        <SliderFilledTrack />
+      </SliderTrack>
+      <Tooltip
+        hasArrow
+        bg='teal.500'
+        color='white'
+        placement='top'
+        isOpen={showTooltip}
+        label={`${sliderValue}`}
+      >
+        <SliderThumb />
+      </Tooltip>
     </Slider>
   )
 }
@@ -49,7 +162,7 @@ const Question4 = (): JSX.Element => (
       <Text fontSize='2xl'>0</Text>
       <VStack spacing="32px">
         <Text fontSize='4xl'>Fruits</Text>
-        <Nslider/>
+        <Nslider1/>
       </VStack>
       <Text fontSize='2xl'>175</Text>
     </Center>
@@ -57,7 +170,7 @@ const Question4 = (): JSX.Element => (
       <Text fontSize='2xl'>0</Text>
       <VStack spacing="32px">
         <Text fontSize='4xl'>Hoppy</Text>
-        <Nslider/>
+        <Nslider2/>
       </VStack>
       <Text fontSize='2xl'>172</Text>
     </Center>
@@ -65,7 +178,7 @@ const Question4 = (): JSX.Element => (
       <Text fontSize='2xl'>0</Text>
       <VStack spacing="32px">
         <Text fontSize='4xl'>Spices</Text>
-        <Nslider/>
+        <Nslider3/>
       </VStack>
       <Text fontSize='2xl'>184</Text>
     </Center>
@@ -73,7 +186,7 @@ const Question4 = (): JSX.Element => (
       <Text fontSize='2xl'>0</Text>
       <VStack spacing="32px">
         <Text fontSize='4xl'>Malty</Text>
-        <Nslider/>
+        <Nslider4/>
         <MyButton/>
       </VStack>
       <Text fontSize='2xl'>239</Text>

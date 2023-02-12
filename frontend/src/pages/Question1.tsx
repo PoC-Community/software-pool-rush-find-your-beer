@@ -10,14 +10,18 @@ import {
   SliderTrack,
   SliderFilledTrack,
   SliderThumb,
-  Button, Heading
+  Button, Heading, SliderMark, Tooltip
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 
 function Rslider () {
   return(
-    <RangeSlider aria-label={['min', 'max']} defaultValue={[1, 1000]}>
+    <RangeSlider
+      min={0}
+      max={100}
+      w="600px"
+      defaultValue={[20, 80]}>
       <RangeSliderTrack>
         <RangeSliderFilledTrack />
       </RangeSliderTrack>
@@ -28,12 +32,32 @@ function Rslider () {
 }
 
 function Nslider () {
-  return(
-    <Slider aria-label='slider-ex-1' defaultValue={30}>
+  const [sliderValue, setSliderValue] = React.useState(5)
+  const [showTooltip, setShowTooltip] = React.useState(false)
+  return (
+    <Slider
+      w="600px"
+      id='slider'
+      defaultValue={5}
+      min={0}
+      max={57.5}
+      onChange={(v) => setSliderValue(v)}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+    >
       <SliderTrack>
         <SliderFilledTrack />
       </SliderTrack>
-      <SliderThumb />
+      <Tooltip
+        hasArrow
+        bg='teal.500'
+        color='white'
+        placement='top'
+        isOpen={showTooltip}
+        label={`${sliderValue}`}
+      >
+        <SliderThumb />
+      </Tooltip>
     </Slider>
   )
 }
@@ -64,7 +88,7 @@ const Question1 = (): JSX.Element => (
     <Center mt="64px">
       <Text fontSize='2xl'>0</Text>
       <VStack spacing="32px">
-        <Text fontSize='4xl'>IBU(International Bitterness Units)</Text>
+        <Text fontSize='4xl'>IBU</Text>
         <Rslider/>
       </VStack>
       <Text fontSize='2xl'>100</Text>
@@ -72,7 +96,7 @@ const Question1 = (): JSX.Element => (
     <Center mt="64px">
       <Text fontSize='2xl'>0</Text>
       <VStack spacing="32px">
-        <Text fontSize='4xl'>ABV(Alcool By Volume)</Text>
+        <Text fontSize='4xl'>ABV</Text>
         <Nslider/>
         <MyButton/>
       </VStack>
