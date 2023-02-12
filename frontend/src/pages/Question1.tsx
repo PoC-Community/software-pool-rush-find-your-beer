@@ -81,26 +81,26 @@ function MyButton() {
 const Question1 = (): JSX.Element => (
   <div>
     <Center mt="64px">
-      <Heading size='4xl' fontSize='100px'>
+      <Heading size='4xl' fontSize='100px' color='white'>
         Stats
       </Heading>
     </Center>
     <Center mt="64px">
-      <Text fontSize='2xl'>0</Text>
+      <Text fontSize='2xl' color='white'>0</Text>
       <VStack spacing="32px">
-        <Text fontSize='4xl'>IBU</Text>
+        <Text fontSize='4xl' color='white'>IBU</Text>
         <Rslider/>
       </VStack>
-      <Text fontSize='2xl'>100</Text>
+      <Text fontSize='2xl' color='white'>100</Text>
     </Center>
     <Center mt="64px">
-      <Text fontSize='2xl'>0</Text>
+      <Text fontSize='2xl' color='white'>0</Text>
       <VStack spacing="32px">
-        <Text fontSize='4xl'>ABV</Text>
+        <Text fontSize='4xl' color='white'>ABV</Text>
         <Nslider/>
         <MyButton/>
       </VStack>
-      <Text fontSize='2xl'>57.5</Text>
+      <Text fontSize='2xl' color='white'>57.5</Text>
     </Center>
   </div>
 );

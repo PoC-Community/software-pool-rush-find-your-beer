@@ -26,8 +26,8 @@ const Home = (): JSX.Element => (
     <Center mt="64px">
      <VStack spacing="32px">
           <MyImage />
-          <Text fontSize='4xl'>Are you looking for the perfect beer for you ?</Text>
-          <Text fontSize='4xl'>You are on the right place !</Text>
+          <Text fontSize='4xl' color='white'>Are you looking for the perfect beer for you ?</Text>
+          <Text fontSize='4xl' color='white'>You are on the right place !</Text>
           <MyButton />
      </VStack>
     </Center>
